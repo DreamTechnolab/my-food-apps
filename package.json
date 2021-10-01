@@ -4,7 +4,8 @@
   "description": "Food app for restraunt",
   "main": "server.js",
   "scripts": {
-    "server": "nodemon server.js"
+    "server": "nodemon server.js",
+    "start": "node server.js"
   },
   "author": "Diptee Parmar",
   "license": "ISC",
@@ -22,5 +23,13 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.13"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DreamTechnolab/just-order.git"
+  },
+  "bugs": {
+    "url": "https://github.com/DreamTechnolab/just-order/issues"
+  },
+  "homepage": "https://github.com/DreamTechnolab/just-order#readme"
 }
