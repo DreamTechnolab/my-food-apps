@@ -1,8 +1,4 @@
-const { response } = require("express");
-const { socket } = require("server/router");
-const { socket } = require("socket.io");
-
-var socketServerUrl = "";
+var socketServerUrl = "https://app-just-order.herokuapp.com/";
 var hostToLive = "http://localhost";
 
 var socket = require('socket.io-client')(socketServerUrl);
