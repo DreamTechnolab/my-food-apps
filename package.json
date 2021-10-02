@@ -1,5 +1,5 @@
 {
-  "name": "localhost-to-live",
+  "name": "apps-api-food",
   "version": "1.0.0",
   "description": "Food app for restraunt",
   "main": "server.js",

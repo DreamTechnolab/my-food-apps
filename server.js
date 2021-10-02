@@ -6,6 +6,11 @@ app.use(cors());
 require("dotenv").config();
 const port = process.env.PORT || 5001;
 
+
+app.get("/", (req, res) => {
+    res.send("Hello there")
+})
+
 app.use(express.json({ extebded: false }));
 
 app.use("/auth", require("./routes/auth"));
