@@ -48,9 +48,18 @@ router.post(
                   //   expiresIn: 7200,
                   // },
                   (err, token) => {
-                    return res
+                    con.query(`SELECT * FROM users WHERE phone = '${phone}'`, (err, rows) => {
+                      con.release();
+                      if (rows) {
+                        return res
                       .status(200)
                       .json({data: rows, msg: "User added successfully", token });
+                      } else {
+                        console.error(err);
+                        return res.status(500).json({ data: "SERVER ERROR" });
+                      }
+                    });
+                    
                   }
                 );
               } else {
