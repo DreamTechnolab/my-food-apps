@@ -50,7 +50,7 @@ router.post(
                   (err, token) => {
                     return res
                       .status(200)
-                      .json({ msg: "User added successfully", token });
+                      .json({data: rows, msg: "User added successfully", token });
                   }
                 );
               } else {
