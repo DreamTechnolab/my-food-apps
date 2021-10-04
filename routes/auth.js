@@ -121,7 +121,7 @@ router.post(
               (err, token) => {
                 return res
                   .status(200)
-                  .json({ msg: "User logged in successfully", token });
+                  .json({data: rows, msg: "User logged in successfully", token });
               }
             );
           }
@@ -226,7 +226,7 @@ router.post(
             if (myString != myString2){
               return res
               .status(404)
-              .json({ msg: "User not found with this mobile number"});
+              .json({msg: "User not found with this mobile number"});
             }
 
             // const isMatch = await bcrypt.compare(myString,myString2);
