@@ -4,7 +4,7 @@ const auth = require("../middleware/auth");
 const router = require("express").Router();
 
 // GET DISHES
-router.get("/", [auth], (req, res) => {
+router.get("/get_dish",(req, res) => {
   const data = req.body;
   pool.getConnection((err, con) => {
     if (err) throw err;
@@ -21,11 +21,11 @@ router.get("/", [auth], (req, res) => {
 });
 
 // GET DISH
-router.get("/:id", (req, res) => {
-  const { id } = req.params;
+router.get("/get_dish/:rest_id", (req, res) => {
+  const { rest_id } = req.params;
   pool.getConnection((err, con) => {
     if (err) throw err;
-    con.query(`SELECT * FROM dishes WHERE d_id = ${id}`, (err, rows) => {
+    con.query(`SELECT * FROM dishes WHERE rest_id = ${rest_id}`, (err, rows) => {
       con.release();
       if (rows) {
         return res.status(200).json({ data: rows });

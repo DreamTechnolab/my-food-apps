@@ -1,5 +1,8 @@
-const express = require("express");
-const app = express();
+var express = require("express");
+//const app = express();
+var app = express();
+var multer = require('multer');
+var upload = multer();
 const cors = require("cors");
 
 app.use(cors());
@@ -11,7 +14,17 @@ app.get("/", (req, res) => {
     res.send("Hello there")
 })
 
-app.use(express.json({ extebded: false }));
+// for parsing application/json
+app.use(express.json()); 
+
+// for parsing application/x-www-form-urlencoded
+app.use(express.urlencoded({ extended: true })); 
+
+// for parsing multipart/form-data
+app.use(upload.array()); 
+app.use(express.static('public'));
+
+//app.use(express.json({ extebded: true }));
 
 app.use("/auth", require("./routes/auth"));
 app.use("/customers", require("./routes/customer"));
