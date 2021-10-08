@@ -39,4 +39,33 @@ router.get("/get_restaurants", (req, res) => {
     });
   });
 
+    // GET ALL HOME
+router.get("/home", (req, res) => {
+  pool.getConnection((err, con) => {
+    if (err) throw err;
+    con.query("SELECT * FROM banners", (err, rows) => {
+      con.release();
+      if (rows) {
+        pool.getConnection((err, con) => {
+          if (err) throw err;
+          con.query("SELECT * FROM banners", (err, rows) => {
+            con.release();
+            if (rows) {
+              
+              return res.status(200).json({ data: rows });
+            } else {
+              console.error(err);
+              return res.status(500).json({ data: "SERVER ERROR" });
+            }
+          });
+        });
+        return res.status(200).json({ data: rows });
+      } else {
+        console.error(err);
+        return res.status(500).json({ data: "SERVER ERROR" });
+      }
+    });
+  });
+});
+
   module.exports = router;
