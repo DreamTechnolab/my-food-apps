@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "server": "nodemon server.js",
-    "start": "node server.js"
+    "start": "node server.js",
+    "build": "webpack"
   },
   "author": "Diptee Parmar",
   "license": "ISC",
@@ -26,7 +27,8 @@
     "superagent": "^6.1.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.13"
+    "nodemon": "^2.0.13",
+    "webpack": "^5.58.0"
   },
   "repository": {
     "type": "git",

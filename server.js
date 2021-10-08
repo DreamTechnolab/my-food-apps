@@ -7,7 +7,7 @@ const cors = require("cors");
 
 app.use(cors());
 require("dotenv").config();
-const port = process.env.PORT || 5001;
+const port = process.env.PORT || 5001;//"192.168.0.112"
 
 
 app.get("/", (req, res) => {
@@ -33,7 +33,8 @@ app.use("/orders", require("./routes/orders"));
 app.use("/restaurants", require("./routes/restaurants"));
 app.listen(port, () => console.log(`Example app listening on port ${port} !`));
 
-
+// var http = require('http');http.createServer(function (req,res){ res.write('Nodejs started using xampp'); res.end();}).listen(8080);
+// console.log('http server started'); 
 // const port = process.env.PORT || 5001;
 
 

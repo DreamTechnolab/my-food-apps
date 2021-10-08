@@ -1,10 +1,12 @@
 const mysql = require("mysql");
 
 const pool = mysql.createPool({
-host: "192.168.0.112",
+host: "localhost",
 user: "root",
 //   password: "password",
+server: "127.0.0.1",
 database: "just-order",
+port : 3306
 });
 
 module.exports = pool;
