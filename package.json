@@ -1,5 +1,5 @@
 {
-  "name": "apps-api-food",
+  "name": "my-food-apps",
   "version": "1.0.0",
   "description": "Food app for restraunt",
   "main": "server.js",
