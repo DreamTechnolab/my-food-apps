@@ -6,7 +6,7 @@ user: "root",
 //   password: "password",
 server: "127.0.0.1",
 database: "just-order",
-port : 3306
+port : 3306,
 });
 
 module.exports = pool;
